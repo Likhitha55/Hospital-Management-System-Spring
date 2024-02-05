@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Service
-public class DoctorService {
+public class DoctorService extends PatientOperationUtils{
     @Autowired
     DoctorRepository doctorRepository;
     @Autowired
@@ -24,5 +24,8 @@ public class DoctorService {
         List<Doctor> doctors = hospital.getDoctor();
         doctors.add(d);
         doctorRepository.registerDoctor(d);
+    }
+    public Doctor getDoctorByID(UUID id){
+        return doctorRepository.getDoctorByID(id);
     }
 }

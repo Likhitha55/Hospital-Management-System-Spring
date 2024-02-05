@@ -1,5 +1,6 @@
 package com.hospitalmanagementsystem.Hospital.Management.System.repository;
 
+import com.hospitalmanagementsystem.Hospital.Management.System.models.Doctor;
 import com.hospitalmanagementsystem.Hospital.Management.System.models.Hospital;
 import org.springframework.stereotype.Repository;
 
@@ -33,5 +34,8 @@ public class HospitalRepository {
     }
     public Hospital getHospitalByID(UUID id){
         return hospitalDB.get(id);
+    }
+    public List<Doctor> getAllDoctorsByHID(UUID hospitalID){
+        return hospitalDB.get(hospitalID).getDoctor();
     }
 }

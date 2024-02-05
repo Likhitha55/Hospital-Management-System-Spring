@@ -26,5 +26,8 @@ public class DoctorRepository {
         UUID id = d.getDoctorID();
         doctorDB.put(id,d);
     }
+    public Doctor getDoctorByID(UUID id){
+        return doctorDB.get(id);
+    }
 
 }

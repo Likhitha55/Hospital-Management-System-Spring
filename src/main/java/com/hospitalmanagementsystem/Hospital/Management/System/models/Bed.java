@@ -5,29 +5,34 @@ import java.util.UUID;
 public class Bed {
     UUID bID;
     UUID pID;
-    UUID doctorID;
-    Boolean isBooked;
 
-    public Bed(UUID bID, UUID pID, UUID doctorID, Boolean isBooked) {
+    UUID doctorID;
+    Boolean isBooked=false;
+    UUID hospitalID;
+    public Bed() {
+    }
+
+    public Bed(UUID bID, UUID pID, UUID doctorID, Boolean isBooked,UUID hospitalID) {
         this.bID = bID;
         this.pID = pID;
         this.doctorID = doctorID;
-        this.isBooked = isBooked;
+        this.isBooked = false;
+        this.hospitalID = hospitalID;
     }
 
-    public UUID getbID() {
+    public UUID getBID() {
         return bID;
     }
 
-    public void setbID(UUID bID) {
+    public void setBID(UUID bID) {
         this.bID = bID;
     }
 
-    public UUID getpID() {
+    public UUID getPID() {
         return pID;
     }
 
-    public void setpID(UUID pID) {
+    public void setPID(UUID pID) {
         this.pID = pID;
     }
 
@@ -39,13 +44,18 @@ public class Bed {
         this.doctorID = doctorID;
     }
 
-    public Boolean getBooked() {
+    public Boolean getIsBooked() {
         return isBooked;
     }
 
-    public void setBooked(Boolean booked) {
+    public void setIsBooked(Boolean booked) {
         isBooked = booked;
     }
+    public UUID getHospitalID() {
+        return hospitalID;
+    }
 
-
+    public void setHospitalID(UUID hospitalID) {
+        this.hospitalID = hospitalID;
+    }
 }
